@@ -1,27 +1,33 @@
 @font-face {
-  font-family: Canopee;
-  src: url(./fonts/616fd1dd00cf6c70f978fc69_Canopee.ttf) format('ttf');
+  font-family: 'Canopee';
+  src: url(./fonts/616fd1dd00cf6c70f978fc69_Canopee.ttf) format('truetype');
 }
+
 @font-face {
-  font-family: Bluu Next;
-  src: url(./fonts/BluuNext-Bold.ttf) format('ttf');
+  font-family: 'Bluu Next';
+  src: url(./fonts/BluuNext-Bold.ttf) format('truetype');
 }
+
 @font-face {
-  font-family: Empiric Roman;
-  src: url(./fonts/EMPORO.TTF) format('ttf');
+  font-family: 'Empiric Roman';
+  src: url(./fonts/EMPORO.TTF) format('truetype');
 }
+
 @font-face {
-  font-family: Harry P;
-  src: url(./fonts/HarryP-MVZ6w.ttf) format('ttf');
+  font-family: 'Harry P';
+  src: url(./fonts/HarryP-MVZ6w.ttf) format('truetype');
 }
+
 @font-face {
-  font-family: MasonSansRegular;
-  src: url(./fonts/MasonSansRegular_Regular.ttf) format('ttf');
+  font-family: 'MasonSansRegular';
+  src: url(./fonts/MasonSansRegular_Regular.ttf) format('truetype');
 }
+
 @font-face {
-  font-family: SofiaPro-Medium;
-  src: url(./fonts/normal_normal_500.ttf) format('ttf');
+  font-family: 'SofiaPro-Medium';
+  src: url(./fonts/normal_normal_500.ttf) format('truetype');
 }
+
 * {
   margin: 0;
   padding: 0;
