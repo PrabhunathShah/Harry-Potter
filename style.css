@@ -216,6 +216,8 @@ body {
   font-family: Bluu Next;
   color: #202020e7;
   font-size: 15px;
+  word-spacing: -1px;
+  letter-spacing: -0.1px;
 }
 #elem1 p span {
   font-family: Bluu Next;
@@ -511,7 +513,7 @@ body {
   padding: 0px 25px;
   font-family: SofiaPro-Medium;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 500;
 }
 #left3 #simg img{
   padding: 28px 10px;
