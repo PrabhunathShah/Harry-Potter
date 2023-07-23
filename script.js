@@ -1,32 +1,47 @@
-window.addEventListener("load", () => {
+function hideLoadingScreen() {
   const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.style.display = "none";
+  const mainContent = document.getElementById("main");
+
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+    mainContent.style.display = "block";
+    startGSAPAnimation(); // Call the function to start GSAP animations
+  }, 3000); // 3 seconds delay
+}
+
+// Function to start GSAP animations
+function startGSAPAnimation() {
+  var t1 = gsap.timeline();
+
+  t1.to("#page1", {
+    y: "100vh",
+    scale: 0.5,
+    duration: 0.1,
+  });
+
+  t1.to("#page1", {
+    y: "-60vh",
+    duration: 2.5,
+    delay: 0.5,
+  });
+  t1.to("#page1", {
+    y: "0vh",
+    rotate: -360,
+    scale: 1,
+    duration: 1,
+    delay: 0.5,
+  });
+
+  // Rest of your existing GSAP animations
+}
+
+window.addEventListener("load", () => {
+  hideLoadingScreen();
 });
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector("#main"),
   smooth: true,
-});
-
-var t1 = gsap.timeline();
-
-t1.to("#page1", {
-  y: "100vh",
-  scale: 0.5,
-  duration: 0.1,
-});
-
-t1.to("#page1", {
-  y: "-60vh",
-  duration: 2.5,
-  delay: 0.5,
-});
-t1.to("#page1", {
-  y: "0vh",
-  rotate: -360,
-  scale: 1,
-  duration: 1,
-  delay: 0.5,
 });
 // Function to show/hide the overlay message and blank page based on screen width
 function toggleOverlay() {
@@ -54,7 +69,8 @@ function isElementInViewport(el) {
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
@@ -65,6 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   videos.forEach((video) => {
     video.addEventListener("loadeddata", () => {
+      video.muted = true; // Mute all videos initially
       if (!isSmallScreen) {
         video.play(); // Autoplay videos on larger screens
       }
@@ -72,7 +89,6 @@ window.addEventListener("DOMContentLoaded", () => {
         video.currentTime = 0;
         video.play();
       });
-      video.muted = true; // Mute all videos initially
     });
 
     video.addEventListener("mouseenter", () => {
