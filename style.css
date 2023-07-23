@@ -174,11 +174,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 35px 50px;
-  margin-bottom: 30px;
+  padding: 28px 40px;
+  margin-bottom: 5px;
 }
 #elem1 {
-  /* margin-right: px; */
+  margin-right: -35px;
   width: 30%;
   height: 100%;
   /* background-color: red; */
@@ -193,6 +193,7 @@ img {
   border-left: 1px solid#222;
 }
 #elem3 {
+  margin-left: -35px;
   width: 30%;
   height: 100%;
   /* background-color: red; */
