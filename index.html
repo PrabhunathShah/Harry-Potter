@@ -10,101 +10,249 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Replace this section with the provided HTML -->
     <div id="loading-screen">
-    <!-- Image to show during loading -->
-    <img src="https://i.pinimg.com/564x/0c/0f/20/0c0f2059e7aea40a3a316bccf81e1ea1.jpg" alt="Loading Image">
-    <!-- Loading animation -->
-    <div class="loading-animation">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
-    </div>
-    <div id="blank-page"></div>
-    <div id="page-overlay">
-    <div id="small-screen-message">
-        <p>Please switch to a larger screen for a better experience.</p>
-    </div>
-    </div>    
-    <div id="main">
-        <div id="page1">
-            <div id="nav">
-                <img src="images/wizarding-world-logo.png" alt="Wizarding World" height="50px" width="5%" >
-                <img id="top" src="https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/5f7f87c8b81a6e7a214312f0_header.svg" alt="The Paper Portfolio" id="m" height="39px" width="10%" >
-                <i class="ri-menu-3-line"></i>
-            </div>
-            <div id="elems">
-                <div id="elem1">
-                    <div id="image-div">
-                        <img src="https://i.pinimg.com/564x/c4/e8/34/c4e83437e007fb5ff887fd5c54721ab5.jpg" alt="Harry Potter">
-                    </div>
-                    <h3>Harry Potter<span>WIZARD</span></h3>
-                    <p><span>I'm</span> Harry Potter, the Boy Who Lived. I discovered I was a wizard at 11, attended Hogwarts School of Witchcraft and Wizardry, faced dark forces, and ultimately defeated Lord Voldemort, ensuring peace in the wizarding world.</p>
-                </div>
-                <div id="elem2">
-                    <h1>Harry Potter</h1>
-                    <h3>A Magical Journey<br>into the world of -<br>Witchcraft and Wizardry</h3>
-                    <h4><span><strong>Welcome! </strong></span> to Magical World.</h4>
-                </div>
-                <div id="elem3">
-                        <div id="image-div">
-                            <img src="https://i.pinimg.com/564x/97/4f/b5/974fb572ba2abab82685c2351da7e8fb.jpg" alt="Harry Potter and his Friends">
-                        </div>
-                        <h3><strong>The Wizarding Trinity</strong><span>TRIO</span></h3>
-                        <p><span><strong>With</strong></span> my friends Ron Weasley and Hermione Granger. We've faced many dangers and challenges, from evil dark lords to giant spiders to deadly puzzles. We've also learned a lot about magic, friendship, and courage.</p>
-                </div>
-            </div>
-            <div id="hed">
-                <h1>HOGWARTS</h1>
-            </div>
-            <div id="part2">
-                <div id="lleft">
-                    <h1><span id="s">Hogwarts</span> School of <span id="e">Witchcraft and Wizardry!</span></h1>
-                    <div id="limage-div">
-                        <img src="https://i.pinimg.com/564x/81/03/3c/81033ce4240a7b7319df27e6e2a0f7a9.jpg" alt="">
-                    </div>
-                    <div id="left1">
-                        <!-- <span id="wi">H</span> -->
-                        <p>Hogwarts, the magical school that became my second home. It's a place of enchantment and learning, where I forged lifelong friendships, faced countless challenges, and discovered the power of love and bravery.</p>
-                    </div>
-                </div>
-                <div id="right">
-                    <div id="r2image-div">
-                        <img src="images/group.png" alt="">
-                    </div>
-                    <p>During my time at Hogwarts, I encountered a diverse group of individuals, each with their own unique stories and magical abilities.</p>
-                </div>
-            </div>
-            </div>
-            <div id="page4">
-                <div id="page2">
-                    <h1>HOUSES</h1>
-                    <img src="images/hstamp.jpg" alt="Houses">
-                    </div>
-                <div id="page3">
-                    <div id="left3">
-                        <div id="p3left">
-                    <div id="left31">
-                        <h2>Hogwarts Sorting</h2>
-                    <h3>Mystical Sorting Spectacle: Unveiling the Wonders Within, As Houses Embrace Their Flourishing Wizardry and Unity!</h3>
-                    <p><span>Embrace!</span>Your Magical Journey.</p>
-                    </div>
-                    <div id="left32">
-                        <div class="card">
-                            <video class="video" id="video1" src="Video/video1.mp4" loop muted></video>
-                        </div>
-                        <h2>Hogwarts Wizard's Accord</h2>
-                        <p>Hogwarts Houses instill traits: bravery, loyalty, wisdom, ambition, shaping alumni into skilled wizards, united for the greater magical good.</p>
-                    </div>
-                    </div>
-                    <div id="simg">
-                        <img src="images/Final Show.jpg" alt="">
-                    </div>
-                    </div>
-                    <div id="right3"></div>
-            </div>
+        <img src="images/Loading-removebg.png" alt="Loading Image" class="no-zoom">
+        <div class="loading-animation">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
+    </div>
+    <div id="message-box">
+        <p id="message">
+            Please switch to a bigger screen for a better experience.
+        </p>
+    </div>
+    <div id="main">
+            <div id="pages">
+                <div id="container-1">
+                    <div id="nav">
+                        <a href="https://www.wizardingworld.com/" target="_blank"><img id="nav-img1" src="./images/wizarding-world-logo.png" alt="Wizarding World Logo"></a>
+                        <a href="https://bit.ly/HarryPottersLegacy" target="_blank"><img id="nav-img2" src="https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/5f7f87c8b81a6e7a214312f0_header.svg" alt="The Paper Portfolio"></a>     
+                        <a href="https://www.niccolomiranda.com/" target="_blank"><i class="ri-menu-3-fill"></i></a>     
+                    </div>
+                    <div id="page1">
+                        <div id="elems">
+                            <div id="elem1">
+                                <div id="image-div">
+                                    <img src="https://i.pinimg.com/564x/c4/e8/34/c4e83437e007fb5ff887fd5c54721ab5.jpg" alt="Harry Potter" class="no-zoom">
+                                </div>
+                                <h3><strong>Harry Potter</strong><span>WIZARD</span></h3>
+                                <p><span>I'm</span> Harry Potter, the Boy Who Lived. I discovered I was a wizard at 11, attended Hogwarts School of Witchcraft and Wizardry, faced dark forces, and ultimately defeated Lord Voldemort, ensuring peace in the wizarding world.</p>
+                            </div>
+                            <div id="elem2">
+                                <h1>Harry Potter</h1>
+                                <h3>A Magical Journey<br>into the world of -<br>Witchcraft and Wizardry</h3>
+                                <h4><span><strong>Welcome! </strong></span> to Magical World.</h4>
+                            </div>
+                            <div id="elem3">
+                                    <div id="image-div">
+                                        <img src="https://i.pinimg.com/564x/97/4f/b5/974fb572ba2abab82685c2351da7e8fb.jpg" alt="Harry Potter and his Friends" class="no-zoom">
+                                    </div>
+                                    <h3><strong>The Wizarding Trinity</strong><span>TRIO</span></h3>
+                                    <p><span>With</span> my friends Ron Weasley and Hermione Granger. We've faced many dangers and challenges, from evil dark lords to giant spiders to deadly puzzles. We've also learned a lot about magic, friendship, and courage.</p>
+                            </div>
+                        </div>
+                        <div id="hed">
+                            <h1>HOGWARTS</h1>
+                        </div>
+                    </div>
+                    <div id="page2">
+                            <div id="p2left">
+                                    <h1><span id="s">Hogwarts</span> School of <span id="e">Witchcraft and Wizardry!</span></h1>
+                                    <div class="card">
+                                        <video class="video" id="video4" src="./Video/video4.mp4" loop muted controls oncontextmenu="return false;"></video>
+                                    </div>
+                                    <p>Hogwarts, the magical school that became my second home. It's a place of enchantment and learning, where I forged lifelong friendships, faced countless challenges, and discovered the power of love and bravery.</p>
+                            </div>
+                            <div id="p2right">
+                                    <div id="p2rimage-div">
+                                        <img src="images/group.png" alt="" class="no-zoom">
+                                    </div>
+                                        <p>During my time at Hogwarts, I encountered a diverse group of individuals, each with their own unique stories and magical abilities.</p>
+                            </div>
+                    </div>
+                    <div id="page3">
+                        <h1>HOUSES</h1>
+                        <img src="images/hstamp.jpg" alt="Houses" class="no-zoom">
+                    </div> 
+                    <div id="page4">
+                            <div id="left4">
+                                <div id="p4left">
+                                    <div id="left41">
+                                        <h2>Hogwarts Sorting</h2>
+                                        <h3>Mystical Sorting Spectacle: Unveiling the Wonders Within, As Houses Embrace Their Flourishing Wizardry and Unity!</h3>
+                                        <p><span>Embrace!</span>Your Magical Journey.</p>
+                                    </div>
+                                    <div id="left42">
+                                        <div class="card">
+                                            <video class="video" id="video1" src="Video/video1.mp4" loop muted oncontextmenu="return false;"></video>
+                                        </div>
+                                            <h2>Hogwarts Wizard's Accord</h2>
+                                            <p>Hogwarts Houses instill traits: bravery, loyalty, wisdom, ambition, shaping alumni into skilled wizards, united for the greater magical good.</p>
+                                    </div>
+                                </div>
+                                    <div id="simg">
+                                        <img src="images/Final Show.jpg" alt="" class="no-zoom">
+                                    </div>
+                            </div>
+                            <div id="right4">
+                                <h2>Hogwarts Final</h2>
+                                <h1>Showdown</h1>
+                                <p>Voldemort, an evil dark wizard obsessed with immortality, launched a merciless war upon Hogwarts, seeking to spread fear and darkness throughout the wizarding world. <br><br>As the Chosen One, I confronted him. Our epic battle tested courage, love, and sacrifice. In the end, I triumphed, defeating Voldemort and restoring peace to the wizarding world.</p>
+                                <div id="anda">
+                                    <img src="images/wand.png" alt="">
+                                    <pre>Dark Defeat</pre>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div id="container-2">
+                    <div id="page5">
+                        <div id="numbers">
+                            <div id="number1">
+                                <p>Hogwarts Express arrives at Platform<br><span>Number</span></p>
+                                <h1>9<sup>¾</sup></h1>
+                            </div>
+                            <div id="number2">
+                                <p>Years at Hogwarts <br>for Magical<br><span>Education</span></p>
+                                <h1>7</h1>
+                            </div>
+                            <div id="number3">
+                                <p>Founders of Hogwarts Powerful Individual<br><span>Wizards</span></p>
+                                <h1>4</h1>
+                            </div>
+                            <div id="number4">
+                                <p>Number of Horcruxes <br> hold Voldemort's<br><span>Soul</span></p>
+                                <h1>7</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page6">
+                        <div id="p6part1">
+                            <div id="lp6part1">
+                                <img src="./images/My project.png" alt="" class="no-zoom">
+                                <h2>The</h2>
+                                <h1>Wizarding</h1>
+                            </div>
+                            <div id="rp6part1">
+                                <div class="card">
+                                    <video class="video" id="video2" src="Video/video2.mp4" loop muted oncontextmenu="return false;"></video>
+                                </div>
+                        </div>
+                        </div>  
+                        <div id="p6part2">
+                            <div class="card">
+                                <video class="video" id="video3" src="Video/video3.mp4" loop muted oncontextmenu="return false;"></video>
+                            </div>
+                            <h1>WONDERS</h1>
+                        </div>
+                        <div id="p6part3">
+                            <p>My magical journey has been an incredible adventure filled with both trials and triumphs. I cherish the loyal friends who stood by my side and the family I found along the way. Love and bravery have been my guiding lights, helping me conquer darkness and emerge victorious. Now, as I look back on<br><span>MY JOURNEY, I am </span><br>grateful for the magic that has forever transformed my life, and I embrace the happiness that surrounds me.</p>
+                            <div id="p6part3-img-div">
+                                <img src="./images/P6img.jpg" alt="" class="no-zoom">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page7">
+                        <div id="cardanime">
+                            <div id="card1">
+                                <p>"My heart swells with joy as I recall the eternal bonds of magic shared with my school friends, Ron and Hermione. We were faithful comrades, embarking on thrilling magical journeys that forged unbreakable friendships."</p>
+                                <div id="card1div">
+                                    <div id="card1img"><img src="./images/c1.jpg" alt="" class="no-zoom"></div>
+                                    <div id="card1text">
+                                        <h1>Faithful Comrades</h1>
+                                        <h2>Eternal Bonds of Magic</h2>
+                                    </div>
+                                </div>
+                                <div class="over"></div>
+                            </div>
+                            <div id="card2">
+                                <p>"My Hogwarts years were enchanting, filled with wonder and awe. Unfolding mysteries through lessons and daring adventures, I discovered my true self amidst the magical realm."</p>
+                                <div id="card2div">
+                                    <div id="card2img"><img src="./images/c2.jpg" alt="" class="no-zoom"></div>
+                                    <div id="card2text">
+                                        <h1>Enchanted Hogwarts</h1>
+                                        <h2>Enchanting School Days</h2>
+                                    </div>
+                                    <div class="over"></div>
+                                </div>
+                            </div>
+                            <div id="card3">
+                                <p>"Guiding lights like Dumbledore and nurturing mentors were my pillars of hope. The unwavering support from the Order of Phoenix allies, including Sirius Black and Snape, fueled my determination."</p>
+                                <div id="card3div">
+                                    <div id="card3img"><img src="./images/c3.jpg" alt="" class="no-zoom"></div>
+                                    <div id="card3text">
+                                        <h1>Wise Guardians</h1>
+                                        <h2>Guiding Lights in Darkness</h2>
+                                    </div>
+                                    <div class="over"></div>
+                                </div>
+                            </div>
+                            <div id="card4">
+                                <p>"The final battle was the ultimate showdown against darkness. Braving dark forces, I found courage and witnessed defining moments that led to the final victory."</p>
+                                <div id="card4div">
+                                    <div id="card4img"><img src="./images/c4.jpg" alt="" class="no-zoom"></div>
+                                    <div id="card4text">
+                                        <h1>The Ultimate Showdown</h1>
+                                        <h2>Triumph of Love and Courage</h2>
+                                    </div>
+                                </div>
+                                <div class="over"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page8">
+                        <div id="bod">
+                        </div>
+                    </div>
+                    <div id="page9">
+                        <div id="p9elems">
+                            <div id="p9elem1">
+                                <div id="p9image-div">
+                                    <img src="./images/p9img1.jpg" alt="Harry Potter" class="no-zoom">
+                                </div>
+                                <h3><strong>Magical Tales</strong><span>DISCOVER</span></h3>
+                                <p><span>Dive</span> into the 'Harry Potter' series by J.K. Rowling for a magical adventure that will enchant readers of all ages. Explore a world of friendship, courage, and spellbinding wonder.</p>
+                            </div>
+                            <div id="p9elem2">
+                                <h1>Harry Potter</h1>
+                                <h3>Chronicles of<br>Wonderscape: A Grand<br>Magical Wizarding Odyssey.</h3>
+                                <h4><span><strong>Thank You! </strong></span> for visting Website.</h4>
+                            </div>
+                            <div id="p9elem3">
+                                    <div id="p9image-div">
+                                        <img src="https://www.telegraph.co.uk/content/dam/travel/Spark/brand-usa-2018/wizarding-world-of-harry-potter-universal-studios-hollywood.jpg?imwidth=960" alt="Harry Potter and his Friends" class="no-zoom">
+                                    </div>
+                                    <h3><strong>Hogwarts Unveiled</strong><span>EXPLORE</span></h3>
+                                    <p><span>Embark</span> on the 'Magical' tour, an enchanting journey of Hogwarts. Discover the castle's secrets, learn spellbinding history, and immerse yourself in the wonderful world. An unforgettable experience for all ages!</p>
+                            </div>
+                        </div>
+                        <div id="banner">
+                            <div id="banner-div">
+                                <h1>Thank you for visiting! For more details, please visit <a href="https://www.wizardingworld.com/harry-potter-fan-club" target="_blank"><span>Wizarding World</span></a></h1>
+                                <h1>Thank you for visiting! For more details, please visit <a href="https://www.wizardingworld.com/harry-potter-fan-club" target="_blank"><span>Wizarding World</span></a></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div id="lfoot">
+                            <p>Prabhunath_<span id="x">x</span>07&copy;</p>
+                            <img src="./images/x07.png" alt="">
+                            <p id="legal"><span>Legal</span></p>
+                        </div>
+                        <div id="rfoot">
+                            <a href="https://www.linkedin.com/in/prabhunath-shah-88001b250/" target="_blank"><p>LinkedIn</p></a>
+                            <p id="fs">.</p>
+                            <a href="https://github.com/PrabhunathShah" target="_blank"><p>GitHub</p></a>
+                            <p id="fs">.</p>
+                            <a href="https://www.instagram.com/prabhunath_x07/" target="_blank"><p>Instagram</p></a>
+                            <p id="fs">.</p>
+                            <a href="https://api.whatsapp.com/send/?phone=%2B918100304817&text&type=phone_number&app_absent=0" target="_blank"><p>WhatsApp</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

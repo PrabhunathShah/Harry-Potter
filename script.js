@@ -1,142 +1,213 @@
-function hideLoadingScreen() {
-  const loadingScreen = document.getElementById("loading-screen");
-  const mainContent = document.getElementById("main");
 
-  setTimeout(() => {
+
+function isLaptopOrDesktopScreen() {
+  // Get the window width to check the device size
+  const windowWidth = window.innerWidth;
+
+  // Define the breakpoint for laptop and desktop screens (you can adjust this value as needed)
+  const breakpoint = 1024;
+
+  // Return true if the window width is greater than or equal to the breakpoint (laptop/desktop size)
+  return windowWidth >= breakpoint;
+}
+
+// JavaScript
+
+// Function to detect small screens (phones and tablets)
+function isSmallScreen() {
+  // Get the window width to check the screen size
+  const windowWidth = window.innerWidth;
+
+  // Define the breakpoint for small screens (you can adjust this value as needed)
+  const breakpoint = 1024; // For example, 768px is a common breakpoint for tablets
+
+  // Return true if the window width is less than the breakpoint (small screen size)
+  return windowWidth < breakpoint;
+}
+
+// Function to show the message box on small screens
+function showMessageBox() {
+  const messageBox = document.getElementById("message-box");
+  messageBox.style.display = "block";
+}
+
+// Function to hide the message box on tap or click
+function hideMessageBoxOnTap() {
+  const messageBox = document.getElementById("message-box");
+  messageBox.style.display = "none";
+}
+
+// Function to add event listeners to the document
+function addEventListeners() {
+  // Check if the device is a small screen and show the message box if necessary
+  if (isSmallScreen()) {
+    showMessageBox();
+  }
+
+  // Add a click event listener to the document
+  document.addEventListener("click", hideMessageBoxOnTap);
+}
+
+// Call the addEventListeners function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", addEventListeners);
+
+function hideLoadingScreen() {
+  // Check if the device is laptop or desktop size before proceeding
+  if (isLaptopOrDesktopScreen()) {
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainContent = document.getElementById("main");
+    const body = document.body;
+
+    // Disable scrolling
+    body.classList.add("no-scroll");
+
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+      mainContent.style.display = "block";
+      startGSAPAnimation(); // Call the function to start GSAP animations
+    }, 3500); // 3 seconds delay
+  } else {
+    // Hide the loading screen and display the main content immediately for phones and tablets
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainContent = document.getElementById("main");
+
     loadingScreen.style.display = "none";
     mainContent.style.display = "block";
-    startGSAPAnimation(); // Call the function to start GSAP animations
-  }, 3000); // 3 seconds delay
-}
-
-// Function to start GSAP animations
-function startGSAPAnimation() {
-  var t1 = gsap.timeline();
-
-  t1.to("#page1", {
-    y: "100vh",
-    scale: 0.5,
-    duration: 0.1,
-  });
-
-  t1.to("#page1", {
-    y: "-60vh",
-    duration: 2.5,
-    delay: 0.5,
-  });
-  t1.to("#page1", {
-    y: "0vh",
-    rotate: -360,
-    scale: 1,
-    duration: 1,
-    delay: 0.5,
-  });
-
-  // Rest of your existing GSAP animations
-}
-
-window.addEventListener("load", () => {
-  hideLoadingScreen();
-});
-
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-});
-// Function to show/hide the overlay message and blank page based on screen width
-function toggleOverlay() {
-  const pageOverlay = document.getElementById("page-overlay");
-  const blankPage = document.getElementById("blank-page");
-  const isSmallScreen = window.innerWidth < 768; // Adjust this value to target tablets if needed
-
-  if (isSmallScreen) {
-    pageOverlay.style.display = "flex";
-    blankPage.style.display = "block";
-    document.body.style.overflow = "hidden"; // Disable scrolling
-  } else {
-    pageOverlay.style.display = "none";
-    blankPage.style.display = "none";
-    document.body.style.overflow = "auto"; // Enable scrolling
   }
 }
 
-// Call the toggleOverlay function when the page loads and when the window is resized
-window.addEventListener("load", toggleOverlay);
-window.addEventListener("resize", toggleOverlay);
-// Helper function to check if an element is visible within the viewport
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+// Define the function to start GSAP animations
+function startGSAPAnimation() {
+  const page = document.querySelector("#container-1");
+  const tl = gsap.timeline();
+
+  tl.to(page, {
+    y: "10vw",
+    scale: 0.5,
+    duration: 0,
+  })
+    .to(page, {
+      y: "-50vw",
+      duration: 2,
+      ease: "Linear.easeNone",
+    })
+    .to(page, {
+      y: "0vh",
+      rotate: -360,
+      scale: 1,
+      duration: 1.5,
+      delay: 0.5,
+      transformOrigin: "50vw 60vw",
+      ease: "Linear.easeNone",
+    })
+    .then(() => {
+      // Enable scrolling after GSAP animations are complete
+      const body = document.body;
+      body.classList.remove("no-scroll");
+      initLocomotiveScroll(); // Start Locomotive Scroll after GSAP animations are complete
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  hideLoadingScreen(); // Call the function to start the loading screen and GSAP animations
+});
+
+function initLocomotiveScroll() {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("#pages"),
+    smooth: true,
+  });
+
+  // Add your Locomotive Scroll related code here
+  // (e.g., setting up your Locomotive Scroll listeners, options, etc.)
+}
+
+// JavaScript
+function startVideoPlayback() {
+  const videos = document.querySelectorAll(".video");
+  videos.forEach((video) => {
+    video.muted = true; // Mute all videos initially
+    video.play(); // Start video playback
+    video.addEventListener("ended", () => {
+      video.currentTime = 0;
+      video.play();
+    });
+  });
+}
+
+function pauseVideosExcept(currentVideo) {
+  const videos = document.querySelectorAll(".video");
+  videos.forEach((video) => {
+    if (video !== currentVideo) {
+      video.pause();
+    }
+  });
+}
+
+function playVideos() {
+  const videos = document.querySelectorAll(".video");
+  videos.forEach((video) => {
+    if (isElementInViewport(video)) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  startVideoPlayback();
+
   const videos = document.querySelectorAll(".video");
   let currentVideo = null;
 
   videos.forEach((video) => {
-    video.addEventListener("loadeddata", () => {
-      video.muted = true; // Mute all videos initially
-      if (!isSmallScreen) {
-        video.play(); // Autoplay videos on larger screens
-      }
-      video.addEventListener("ended", () => {
-        video.currentTime = 0;
-        video.play();
-      });
-    });
-
     video.addEventListener("mouseenter", () => {
+      if (currentVideo !== null && currentVideo !== video) {
+        currentVideo.pause();
+        currentVideo.currentTime = 0;
+        currentVideo.muted = true; // Mute the previously hovered video
+      }
+
       currentVideo = video;
-      pauseVideosExcept(currentVideo);
-      video.currentTime = 0; // Start the hovered video from the beginning
       video.muted = false; // Unmute the hovered video
+      video.currentTime = 0; // Start the hovered video from the beginning
       video.play(); // Play the video when hovered
     });
 
     video.addEventListener("mouseleave", () => {
-      currentVideo = null;
-      playVideos();
-      video.muted = true; // Mute all videos when not hovered
+      if (currentVideo !== video) {
+        video.currentTime = 0;
+      }
+      video.muted = true; // Mute the video when not hovered
     });
   });
+});
 
-  function pauseVideosExcept(currentVideo) {
-    videos.forEach((video) => {
-      if (video !== currentVideo) {
-        video.pause();
-      }
-    });
-  }
-
-  function playVideos() {
-    videos.forEach((video) => {
-      if (isElementInViewport(video)) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
-  }
-
-  // Use Intersection Observer to handle video visibility
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
+// Use Intersection Observer to handle video visibility
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const video = entry.target;
+    if (entry.isIntersecting) {
+      video.play();
+    } else {
+      video.pause();
+    }
   });
+});
 
+const videos = document.querySelectorAll(".video");
+videos.forEach((video) => {
+  observer.observe(video);
+});
+
+window.addEventListener("beforeunload", () => {
+  const videos = document.querySelectorAll(".video");
   videos.forEach((video) => {
-    observer.observe(video);
+    video.pause(); // Pause videos before the page unloads
   });
+});
+
+window.addEventListener("load", () => {
+  startVideoPlayback();
 });
